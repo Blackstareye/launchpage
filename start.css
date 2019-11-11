@@ -48,6 +48,18 @@
     th {
         text-align: center;
     }
+    
+    .green {
+        color: rgb(47, 168, 47);
+    }
+    
+    .red {
+        color: rgb(199, 32, 32);
+    }
+    
+    .yellow {
+        color: rgb(218, 218, 27);
+    }
     /* 
 .grid-container {
     display: grid;

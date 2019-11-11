@@ -1,7 +1,5 @@
-const TABLE = "table";
-
 var new_config = {
-    head: ["Fach", "Partner", "Übungsnr", "Deadline", "gemacht (x)"],
+    head: ["Fach", "Deadline", "Partner", "Übungsnr", "gemacht (x)"],
     data: {
         satd: {
             name: "SATS",

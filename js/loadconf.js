@@ -53,6 +53,7 @@
 
 //config_json = JSON.parse(config);
 //setconfig(config);
+var date = new Date();
 setconfig_new(new_config);
 
 
@@ -70,6 +71,24 @@ function appendDataSet(data) {
     var el = null;
     for (d_set in data) {
         el = createRow(false);
+        if (d_set === "due") {
+            var due = new Date(data[d_set]);
+            console.log(due);
+            if (date.getTime() > due.getTime()) {
+                //deadline is over: red
+                el.classList += " " + PAST_DEADLINE;
+            } else if (date.getDate() <= due.getDate()) {
+                var daysleft = Math.floor((due - date) / (1000 * 60 * 60 * 24));
+                console.log("days left:" + daysleft);
+                if (daysleft < DAYS_LEFT) {
+                    //deadline is near: yellow
+                    el.classList += " " + DUE_NEAR;
+                } else {
+                    //deadline is not near : green
+                    el.classList += " " + DUE_NOT_NEAR;
+                }
+            }
+        }
         el.innerText = data[d_set];
         //     if (el !== null) {
         //         el.innerText = config_json[p];
