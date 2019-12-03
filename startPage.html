@@ -8,12 +8,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="Content-Type" content="text/html">
     <title>Launchpage</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="start.css">
-
+    <!-- TODO IDEA The idea is the following:
+    setup enviroment with setup sides
+    show the storage links 
+    use localStorage for normal use
+    for persistent use, use the storage mode.
+     -->
+    <!-- TODO guide the user to the directing server depending on server or not and php or not -->
+    <!-- Setup Side -->
 </head>
 
 <body>
@@ -23,6 +31,9 @@
             <object class="pdf-viewer" data="res/stundenplan.pdf" type="application/pdf"></object>
         </section>
         <nav>
+            <ul>Configuration:</ul>
+            <li>MODE: NOT SET</li>
+            <li><a href="config.html">store configuration</a></li>
             <ul>
                 <li><a href="https://campus.verwaltung.uni-tuebingen.de/lsfserver/rds?state=wplan&search=ver&act=add">Stundenplan</a></li>
                 <li><a href="https://moodle.zdv.uni-tuebingen.de">Moodle</a>
@@ -99,6 +110,8 @@
 </body>
 <script src="res/config.js"></script>
 <script src="res/const.js"></script>
+<script src="res/enviroment.js"></script>
+<script src="js/checkEnv.js"></script>
 <script src="js/loadconf.js"></script>
 
 </html>

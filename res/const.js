@@ -10,3 +10,18 @@ const BUTTON_FUNCTION_TEMPLATE = "incrementByInterval(x)";
 
 //TODO hier alle auflisten
 const JSON_TAG_NAME = "name";
+
+
+//PAGE LOCATION STATUS
+const PAGE_LOCATION_STATUS = {
+    LOCAL_SERVER: "localserver",
+    REMOTE_SERVER: "remoteserver",
+    FILE: "file"
+};
+
+//STORAGE TYPE
+const STORAGE_TYPE = {
+    PHP: "php",
+    NODE: "node",
+    JS: "js"
+};

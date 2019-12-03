@@ -9,10 +9,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html">
     <title>Launchpage</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="config.css">
+    <script src="js/checkEnv.js">
 
 </head>
 
@@ -21,8 +23,8 @@
     This is the save config helper page. If you want to persist your changes you need to visit this site.exercises
     <!-- Is php running? show the line below  -->
     <?php $php_is_on = true; 
-    echo "<template> <php> is on </php>" 
-    If php is running on your server, this page saves your config automatically by clicking on the save button?>
+    echo "<template> <php> is on </php>"; 
+    echo "If php is running on your server, this page saves your config automatically by clicking on the save "; ?>
     <!-- Is node js running? show the line below -->
     If you have node js running, this page saves saves your config automatically by clicking on the save button
     <!-- If this page is plain vanilla js, use the following fallback -->
