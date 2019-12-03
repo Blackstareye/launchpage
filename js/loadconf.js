@@ -56,6 +56,32 @@
 var date = new Date();
 setconfig_new(new_config);
 
+// function () {
+//     mylist.insertAdjacentHTML('beforeend', '<li>third</li>');
+// }
+function getButtonFromTemplate() {
+    //get the dom fragment
+    var fragment = document.querySelector("." + BUTTON_TEMPLATE);
+    //import node
+    var node = document.importNode(fragment.content, true);
+    console.log(node);
+    return node;
+}
+
+function createButtonFragment(key = "not set") {
+    // So hat mans früher gemacht
+    //var button = document.createElement("button").setAttribute("type", "button");
+    //button.setAttribute("onClick", "incrementByInterval");
+    var button = getButtonFromTemplate();
+    if (key !== null) {
+        var value = button.childElementCount;
+        //should be one
+        console.log(value);
+        button.firstElementChild.setAttribute("onClick", BUTTON_FUNCTION_TEMPLATE.replace("x", key));
+    }
+    return button;
+
+}
 
 function createDataRowElement() {
     return document.createElement("TR");
@@ -66,7 +92,7 @@ function createRow(isHeader) {
     return isHeader === true ? document.createElement("TH") : document.createElement("TD");
 }
 
-function appendDataSet(data) {
+function appendDataSet(data, withButton = true) {
     var tr = createDataRowElement();
     var el = null;
     for (d_set in data) {
@@ -94,6 +120,12 @@ function appendDataSet(data) {
         //         el.innerText = config_json[p];
         //     }
         tr.appendChild(el);
+    }
+    //add Button
+    if (withButton) {
+        var node = createRow(false);
+        node.appendChild(createButtonFragment(data[JSON_TAG_NAME]));
+        tr.appendChild(node);
     }
     return tr;
 }
@@ -129,5 +161,9 @@ function setconfig_new(config_json) {
         the_data_set = appendDataSet(config_json.data[dataset]);
         table.appendChild(the_data_set);
     }
+
+}
+
+function incrementByInterval(key) {
 
 }
